@@ -1,0 +1,194 @@
+html {
+  font-size: 10px;
+}
+body,html {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+/*
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+KEYS
+KEYS
+KEYS
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*/
+
+.keys-container
+{
+  background:url(http://i.imgur.com/b9r5sEL.jpg) bottom center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.keys {
+  display:flex;
+  flex:1;
+  min-height:100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.key {
+  border:4px solid black;
+  border-radius:5px;
+  margin:1rem;
+  font-size: 1.5rem;
+  padding:1rem .5rem;
+  transition:all .07s;
+  width:100px;
+  text-align: center;
+  color:white;
+  background:rgba(0,0,0,0.4);
+  text-shadow:0 0 5px black;
+}
+
+.playing {
+  transform:scale(1.1);
+  border-color:#ffc600;
+  box-shadow: 0 0 10px #ffc600;
+}
+
+kbd {
+  display: block;
+  font-size: 40px;
+}
+
+.sound {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color:#ffc600;
+}
+
+/*
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+CLOCK
+CLOCK
+CLOCK
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*/
+
+.clock-container {
+  background:#018DED url(http://unsplash.it/1500/1000?image=881&blur=50);
+  background-size:cover;
+  text-align: center;
+  font-size: 2rem;
+  display:flex;
+  flex:1;
+  min-height: 100vh;
+  align-items: center;
+}
+.clock {
+  width: 30rem;
+  height: 30rem;
+  border:20px solid white;
+  border-radius:50%;
+  margin:50px auto;
+  position: relative;
+  padding:2rem;
+  box-shadow:
+  0 0 0 4px rgba(0,0,0,0.1),
+  inset 0 0 0 3px #EFEFEF,
+  inset 0 0 10px black,
+  0 0 10px rgba(0,0,0,0.2);
+}
+.clock-face {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform: translateY(-3px); /* account for the height of the clock hands */
+}
+.hand {
+  width:50%;
+  height:6px;
+  background:black;
+  position: absolute;
+  top:50%;
+  transform-origin: 100%;
+  transform: rotate(90deg);
+  transition: all 0.03s;
+  transition-timing-function: cubic-bezier(0.03, 3.12, 0.6, 0.56);
+}
+
+.second-hand
+{
+  background: red;
+  height: 3px;
+  width: 50%;
+  border-radius: 1px;
+  top: calc(50% + 1.5px);
+}
+.min-hand
+{
+  height: 4px;
+  width: 42.5%;
+  border-radius: 2px;
+  left: 7.5%;
+  top: calc(50% + 1px);
+}
+.hour-hand
+{
+  height: 6px;
+  width: 35%;
+  border-radius: 3px;
+  left: 15%;
+}
+
+.clock-circle
+{
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: black;
+  position: absolute;
+  top: calc(50% - 3px);
+  left: calc(50% - 6px);
+}
+
+/*
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IMG VARIABLE
+IMG VARIABLE
+IMG VARIABLE
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*/
+
+
+.img-container {
+  background: #193549;
+  color: white;
+  font-weight: 100;
+  font-size: 50px;
+  min-height: 100vh;
+  text-align: center;
+}
+.img-container .controls {
+  margin-bottom: 50px;
+}
+.img-container input {
+  width:100px;
+}
+
+.img-container h2 {
+  margin: 0;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+:root {
+  --base: #ffc600;
+  --spacing: 10px;
+  --blur: 2px;
+}
+
+.img-container img {
+  padding: var(--spacing);
+  background: var(--base);
+  filter: blur(var(--blur));
+}
+
+.img-container .hl {
+  color: var(--base);
+}
