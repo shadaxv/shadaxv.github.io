@@ -1,0 +1,118 @@
+@font-face{
+	font-family: theboldfont;
+	src: url("theboldfont.ttf");
+}
+
+body{
+	margin: 0 auto;
+	width: 800px;
+	height: 600px;
+}
+
+#content{
+	background: url("bg2.png") no-repeat;
+	width: 800px;
+	height: 600px;
+}
+
+#linki{
+	margin-left: 90px;
+	height: 500px;
+	width: 450px;
+	padding-top: 160px;
+	
+}
+
+table.tabela{
+	
+	border-collapse: separate;
+	
+}
+
+#sklep{
+	height: 50px;
+	width: 90px;
+	background-image: url("sklep.png");
+	background-size: contain;
+	transition: 0.5s;
+	
+}
+
+#sklep:hover{
+	height: 82px;
+	width: 150px;
+	background-image: url("sklep_hover.png");
+	transition: 0.5s;
+}
+
+#zasady{
+	height: 47px;
+	width: 100px;
+	background-image: url("zasady.png");
+	background-size: contain;
+	transition: 0.5s;
+}
+
+#zasady:hover{
+	height: 84px;
+	width: 194px;
+	background-image: url("zasady_hover.png");
+	transition: 0.5s;
+}
+
+#zostanadminem{
+	height: 60px;
+	width: 200px;
+	background-image: url("zostanadminem.png");
+	background-size: contain;
+	transition: 0.5s;
+}
+
+#zostanadminem:hover{
+	height: 118px;
+	width: 412px;
+	background-image: url("zostanadminem_hover.png");
+	transition: 0.5s;
+}
+
+#naszeserwery{
+	height: 70px;
+	width: 210px;
+	background-image: url("naszeserwery.png");
+	background-size: contain;
+	transition: 0.5s;
+}
+
+#naszeserwery:hover{
+	height: 118px;
+	width: 390px;
+	background-image: url("naszeserwery_hover.png");
+	transition: 0.5s;
+}
+
+#skrocbana{
+	height: 60px;
+	width: 165px;
+	background-image: url("skrocbana.png");
+	background-size: contain;
+	transition: 0.5s;
+}
+
+#skrocbana:hover{
+	height: 103px;
+	width: 308px;
+	background-image: url("skrocbana_hover.png");
+	transition: 0.5s;
+}
+
+#footer{
+	margin-top: 10px;
+	margin-right: 50px;
+}
+
+#footer h1{
+	color: #FFFFFF;
+	text-align: right;
+	font-family: theboldfont;
+	font-size: 13px;
+}
