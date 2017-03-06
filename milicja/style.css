@@ -3,6 +3,13 @@
 	src: url("theboldfont.ttf");
 }
 
+html
+{
+	width: 100%;
+	min-height: 100vh;
+	background: black;
+}
+
 body{
 	margin: 0 auto;
 	width: 800px;
@@ -43,6 +50,7 @@ table.tabela{
 	width: 150px;
 	background-image: url("sklep_hover.png");
 	transition: 0.5s;
+	cursor: pointer;
 }
 
 #zasady{
@@ -58,6 +66,7 @@ table.tabela{
 	width: 194px;
 	background-image: url("zasady_hover.png");
 	transition: 0.5s;
+	cursor: pointer;
 }
 
 #zostanadminem{
@@ -73,6 +82,7 @@ table.tabela{
 	width: 412px;
 	background-image: url("zostanadminem_hover.png");
 	transition: 0.5s;
+	cursor: pointer;
 }
 
 #naszeserwery{
@@ -88,6 +98,7 @@ table.tabela{
 	width: 390px;
 	background-image: url("naszeserwery_hover.png");
 	transition: 0.5s;
+	cursor: pointer;
 }
 
 #skrocbana{
@@ -103,6 +114,7 @@ table.tabela{
 	width: 308px;
 	background-image: url("skrocbana_hover.png");
 	transition: 0.5s;
+	cursor: pointer;
 }
 
 #footer{
