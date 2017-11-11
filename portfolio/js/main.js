@@ -1,8 +1,42 @@
 let scrollPosition = window.scrollY;
 const header = document.querySelector('.main-slider__heading');
 const height = window.innerHeight;
+const width = window.innerWidth;
+const menuHeight = (width < 429) ? 68 : 40;
 const emValue = parseInt(window.getComputedStyle(document.getElementsByTagName("body")[0]).fontSize, 10);
 const brakeHeight = header.offsetTop - (8 * emValue);
+
+function changeActive() {
+  'use strict';
+  const section = document.querySelectorAll(".section-divider");
+  let sections = {};
+  let i = 0;
+
+  Array.prototype.forEach.call(section, function(event) {
+    sections[event.id] = event.offsetTop;
+  });
+
+  window.addEventListener("scroll", position);
+
+  function position() {
+    let scrollPosition = window.scrollY;
+  }
+  for (i in sections) {
+    if (sections[i] <= scrollPosition + menuHeight) {
+      let activeAnchors = document.querySelectorAll('.main-menu__anchor--active');
+      activeAnchors.forEach(anchor => anchor.classList.remove("main-menu__anchor--active"));
+      let nowActiveAnchors = document.querySelectorAll('a[href*=' + i + ']');
+      // nowActiveAnchors.forEach(anchor => anchor.classList.add("main-menu__anchor--active"));
+      nowActiveAnchors.forEach(function(anchor) {
+        if (anchor.classList.contains("main-menu__anchor")) {
+          anchor.classList.add("main-menu__anchor--active");
+        }
+      });
+    }
+  }
+
+};
+
 
 function toogleClassOnScroll(add) {
   switch (add) {
@@ -51,12 +85,14 @@ function watchScroll() {
 }
 
 window.addEventListener("scroll", watchScroll);
+window.addEventListener("scroll", changeActive);
 
 
 const anchors = document.querySelectorAll(".main-menu__anchor");
 anchors.forEach(anchor => anchor.addEventListener('click', preventJump));
 
 function preventJump(event) {
+  'use strict';
   event.preventDefault();
   const hash = this.getAttribute("href");
 
@@ -66,7 +102,7 @@ function preventJump(event) {
     location.hash = hash;
   }
 
-  anchors.forEach(anchor => anchor.classList.remove("main-menu__anchor--active"));
+  //anchors.forEach(anchor => anchor.classList.remove("main-menu__anchor--active"));
 
   if (this.classList.contains("main-menu__anchor")) {
     this.classList.add("main-menu__anchor--active");
@@ -74,21 +110,21 @@ function preventJump(event) {
 
   if (hash == "#start") {
     document.querySelector("#startAnchor").classList.add("main-menu__anchor--active");
-    console.log(document.querySelector("#startAnchor"));
   }
   this.blur();
 
-  smoothScroll(hash, 500);
+  smoothScroll(hash, 800);
 }
 
 function smoothScroll(scrollTo, duration) {
+  'use strict';
   if (duration <= 0) {
     return;
   }
 
   const elementPosition = document.querySelector(scrollTo).offsetTop;
   let scrollFrom = window.scrollY;
-  let difference = elementPosition - scrollFrom - 40;
+  let difference = elementPosition - scrollFrom - menuHeight;
   let perTick = difference / duration * 10;
   const scroll = document.documentElement;
 

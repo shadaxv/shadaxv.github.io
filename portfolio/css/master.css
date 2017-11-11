@@ -43,6 +43,8 @@
     text-align: left;
   }
   .main-menu__item--mobile:last-child {
+    -webkit-box-flex: 0;
+    -ms-flex-positive: 0;
     flex-grow: 0;
   }
   .main-menu__anchor {
@@ -51,6 +53,8 @@
     padding: 3px 12px;
     border-radius: 14px;
     border: 1px solid transparent;
+    -webkit-transition: border .1s ease-out;
+    transition: border .1s ease-out;
   }
   .main-menu__icon {
     position: relative;
@@ -68,6 +72,7 @@
     height: 0;
     top: 8px;
     left: 17px;
+    -webkit-box-shadow: 0 0px 0 1px #fff, 0 6px 0 1px #fff, 0 12px 0 1px #fff;
     box-shadow: 0 0px 0 1px #fff, 0 6px 0 1px #fff, 0 12px 0 1px #fff;
   }
   .mobile-menu__icon {
@@ -77,6 +82,7 @@
     height: 50px;
     cursor: pointer;
     margin: 0 auto;
+    -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
   }
   .mobile-menu__icon:before {
@@ -87,6 +93,7 @@
     height: 2rem;
     top: 9px;
     left: 17px;
+    -webkit-box-shadow: 8px 0px 0 1px #fff;
     box-shadow: 8px 0px 0 1px #fff;
   }
   .mobile-menu__icon:after {
@@ -97,10 +104,11 @@
     height: 0;
     top: 19px;
     left: 9px;
+    -webkit-box-shadow: 0 6px 0 1px #fff;
     box-shadow: 0 6px 0 1px #fff;
   }
-  .main-menu__anchor:hover, .main-menu__anchor:focus {
-    border: 1px solid white;
+  .main-menu__anchor:hover {
+    border: 1px solid transparent;
     background: white;
     color: #222;
   }
@@ -111,7 +119,7 @@
     background: transparent;
     padding: 15px 0;
   }
-  section {
+  .section {
     min-height: 100vh;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -126,8 +134,7 @@
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    background: #7b4397;
-    border-bottom: 10px solid black;
+    background: white;
   }
   .hidden {
     opacity: 0;
@@ -144,9 +151,16 @@
     left: 0;
     right: 0;
     bottom: 0;
+    -webkit-transition: opacity .3s, visibility .3s;
     transition: opacity .3s, visibility .3s;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
   }
   .mobile-menu__list {
@@ -193,14 +207,6 @@
     color: white;
     padding: 3px 12px;
     border-radius: 14px;
-  }
-  .main-menu__anchor:hover, .main-menu__anchor:focus {
-    border: 1px solid white;
-    background: white;
-    color: #222;
-  }
-  .main-menu__anchor--active, .main-menu__anchor:focus {
-    border: 1px solid white;
   }
 }
 
