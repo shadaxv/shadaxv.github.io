@@ -34,6 +34,12 @@ const mobileAnchors = document.querySelectorAll(".mobile-menu__anchor");
 mobileAnchors.forEach(anchor => anchor.addEventListener('click', toogleClassOnClick));
 mobileAnchors.forEach(anchor => anchor.addEventListener('click', preventJump));
 
+mobileNavigation.addEventListener('touchmove', function(event) {
+
+  event.preventDefault();
+
+}, false);
+
 
 function watchScroll() {
   scrollPosition = window.scrollY;
