@@ -6,6 +6,24 @@ const menuHeight = (width < 429) ? 68 : 40;
 const emValue = parseInt(window.getComputedStyle(document.getElementsByTagName("body")[0]).fontSize, 10);
 const brakeHeight = header.offsetTop - (8 * emValue);
 
+function mobileNoJS() {
+  if (width < 960) {
+    document.querySelector(".main-menu__list").classList.add("none");
+    document.querySelector(".main-menu__list--mobile").classList.add("flex");
+  }
+}
+mobileNoJS();
+
+window.addEventListener("resize", function() {
+  if (window.innerWidth < 960) {
+    document.querySelector(".main-menu__list").classList.add("none");
+    document.querySelector(".main-menu__list--mobile").classList.add("flex");
+  } else {
+    document.querySelector(".main-menu__list").classList.remove("none");
+    document.querySelector(".main-menu__list--mobile").classList.remove("flex");
+  }
+});
+
 function changeActive() {
   'use strict';
   const section = document.querySelectorAll(".section-divider");
